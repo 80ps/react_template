@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ff-kr: "Noto sans KR" , sans-serif;
+  --ff-en: "IBN PLex Mono", monospace;
+  color-scheme: dark;
+}
+
+.container{
+  
+  margin: auto;
+  padding: 1rem;
+  width: 100%;
+  
+}
+
+@media (max-widrh: 1024px) {
+  .comtainer{
+    max-width: 100%;
+    
+  }
+}
+
+/* footer .comtainer{
+  display: grid;
+  grid-template-columns: repaeat(3, 1fr); 
+   grid-template-columns: repaeat 1fr 1fr 1fr;
+
+ 
+}; */
+
+.vid{
+  width: 80%;
+  box-shadow: 0 0 5px rgb(138, 138, 138);
+}
+
+
