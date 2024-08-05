@@ -1,0 +1,60 @@
+import React from 'react';
+import { pricingOptions } from '../../constants/data';
+import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const Pricing = () => {
+  return (
+    <div className="mt-20">
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-tight font-customFontKr cont-semibold ">
+        Pricing
+      </h2>
+
+      <div className="flex felx-wrap ">
+        {pricingOptions.map((option, idx) => (
+          <div key={idx} className="p-2 w-ful sm:w-1/2 lg:w-1/3">
+            <div className="p-10 border border-neutral-700 rounded-lg">
+              <p className="text-4xl font-customFontKr mb-8 ">
+                {option.title}
+                {option.title === 'Pro' ? (
+                  <span className=" bg-gradient-to-r from-indigo-200 to-indigo-800 text-transparent bg-clip-text text-xl mb-4 ml-2 tracking-tighter font-semibold">
+                    (Most Popular)
+                  </span>
+                ) : (
+                  ''
+                )}
+              </p>
+              <p>
+                <span className="text-5xl mt-6 mr-2 font-customFontKr">
+                  {option.price}
+                </span>
+                <span className="text-neutral-400 tracking-tight font-customFontKr">
+                  /Month
+                </span>
+              </p>
+              <ul>
+                {option.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="mt-8 flex items-center gap-2 font-customFontKr"
+                  >
+                    <CheckCircle2 />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to={option.link}
+                className="flex justify-center w-full py-2 border boder-indigo700 rounded-lg mt-20 font-customFontKr hover:bg-indigo-700 hover:text-white transition duration-300"
+              >
+                Subscribe
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Pricing;
